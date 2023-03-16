@@ -39,11 +39,13 @@ function App() {
 
   useEffect(()=>{
   
-        dispatch(refresh_token())
+        if(auth.token){
+          dispatch(refresh_token())
         dispatch(getPost(auth))
         dispatch(getNotify({auth}))
+        }
     
-  },[auth.token ])
+  },[auth.user?._id])
 
   useEffect(()=>{
     const newPeer = new Peer(undefined , {

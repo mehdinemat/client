@@ -19,6 +19,7 @@ export const getPost = (auth)=>async(dispatch)=>{
         
         dispatch({type:POST_TYPE.LOADING_POST , payload:true})
         
+        console.log('postacion')
         const res = await getDataAPI('posts' , auth.token)
         dispatch({type:POST_TYPE.GET_POST , payload:{...res.data , page:2}})
         
