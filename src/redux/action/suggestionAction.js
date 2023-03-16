@@ -4,7 +4,7 @@ export const SUGGEST_TYPE ={
     LOADING:"LOADING",GET_USERS:"GET_USERS"
 }
 
-export const getSuggestion = ({auth})=>async(dispatch)=>{
+export const getSuggestion = (auth)=>async(dispatch)=>{
 
     try{
         console.log(auth.token , 'this is suggestion')
