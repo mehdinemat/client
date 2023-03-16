@@ -7,7 +7,7 @@ export const SUGGEST_TYPE ={
 export const getSuggestion = ({auth})=>async(dispatch)=>{
 
     try{
-
+        console.log(auth.token , 'this is suggestion')
        dispatch({type:SUGGEST_TYPE.LOADING , payload:true})
         console.log(auth.user._id , 'id')
         const res = await getDataAPI(`suggestion/${auth.user._id}` , auth.token)

@@ -19,6 +19,7 @@ import { getNotify } from './redux/action/notifyAction';
 import CallModal from './components/CallModal';
 import Peer from 'peerjs'
 import Register from './pages/Register';
+import { getSuggestion } from './redux/action/suggestionAction';
 function App() {
   
   const {auth , socket , status , callReducer , peerReducer} = useSelector((state)=>state)
@@ -42,6 +43,7 @@ function App() {
         if(auth.token){
           dispatch(refresh_token())
         dispatch(getPost(auth))
+        dispatch(getSuggestion(auth))
         dispatch(getNotify({auth}))
         }
     
