@@ -12,9 +12,9 @@ const Sidebar = () => {
   const {auth , suggestionReducer} = useSelector((state)=>state)
   const dispatch = useDispatch()
 
-  useEffect(()=>{
-    dispatch(getSuggestion({auth}))
-  },[])
+  // useEffect(()=>{
+  //   dispatch(getSuggestion({auth}))
+  // },[])
 
   const handleRefreshIcon =async ()=>{
     setLoad(true)
